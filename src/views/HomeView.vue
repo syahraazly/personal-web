@@ -34,6 +34,8 @@
       </v-col>
       </div>
     </v-row>
+
+  <Contact />
 </v-app>
 </template>
 
@@ -42,12 +44,14 @@ import { defineComponent } from 'vue';
 
 // Components
 import Navbar from '../components/Navbar.vue';
+import Contact from '../components/Contact.vue';
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
     Navbar,
+    Contact
   },
 });
 </script>
