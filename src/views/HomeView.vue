@@ -3,17 +3,19 @@
   <Navbar />
     <!-- home -->
     <div class="home-gradient">
-      <v-row class="home-text">
-        <v-col cols="6">
-          <h2 class="text-white top">Hello, I'm</h2>
-          <h1 class="text-white">Syahra Zulya <span style="color: #EC5453">Shania Maghfiroh</span></h1>
-          <p class="text-white mb-4">As a software engineering graduate, my ambition is to work in the IT field, <br> specifically as a Web Developer and Quality Assurance. <br> Open to work and quickly learn new technologies</p>
-          <v-btn tile color="#EC5453">hire me</v-btn>
-        </v-col>
-        <v-col cols="6">
-          <v-img src="..\..\public\home.png" contain max-height="400" class="top1"></v-img>
-        </v-col>
-      </v-row>
+      <v-container>
+        <v-row class="home-text">
+          <v-col cols="12" md="8">
+            <h2 class="top">Hello, I'm</h2>
+            <h1>Syahra Zulya<span style="color: #EC5453"> Shania Maghfiroh</span></h1>
+            <p class="mb-4">As a software engineering graduate, my ambition is to work in the IT field, specifically as a Web Developer and Quality Assurance. Open to work and quickly learn new technologies</p>
+            <v-btn tile color="#EC5453" text @click="scroll('contact')">hire me</v-btn>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-img src="..\..\public\home.png" contain max-height="400" class="top1"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
 
       <v-row>
@@ -48,7 +50,12 @@ import Contact from '../components/Contact.vue';
 
 export default defineComponent({
   name: 'HomeView',
-
+methods: {
+  scroll(refName){
+    const element = document.getElementById(refName);
+    element.scrollIntoView({behavior: "smooth"});
+  }
+  },
   components: {
     Navbar,
     Contact
@@ -61,7 +68,7 @@ export default defineComponent({
   background: linear-gradient(to right, #DFABBD, #79A0DC), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 .home-text {
-  margin-left: 80px;
+  color: #ffffff;
 }
 /* .about-gradient {
   background: linear-gradient(to bottom, #9C96B8, #ffffff);
