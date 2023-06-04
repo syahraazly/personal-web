@@ -59,6 +59,7 @@ export default{
 <style>
 .contact-gradient {
   background: linear-gradient(to right, #DFABBD, #79A0DC), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  padding: 3rem;
 }
 .contact-text {
     color: #ffffff;

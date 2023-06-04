@@ -37,7 +37,7 @@
       </div>
     </v-row>
   <Experience/>
-  <Project/>
+  <!-- <Project/> -->
   <Contact />
 </v-app>
 </template>
@@ -48,7 +48,7 @@ import { defineComponent } from 'vue';
 // Components
 import Navbar from '../components/Navbar.vue';
 import Experience from '../components/Experience.vue';
-import Project from '../components/Project.vue';
+// import Project from '../components/Project.vue';
 import Contact from '../components/Contact.vue';
 
 export default defineComponent({
@@ -62,7 +62,7 @@ methods: {
   components: {
     Navbar,
     Experience,
-    Project,
+    // Project,
     Contact
   },
 });
