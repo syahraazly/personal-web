@@ -1,18 +1,17 @@
 <template>
-<v-app id="home" style="margin-top: 8px">
+<v-app id="home">
   <Navbar />
-    <!-- home -->
     <div class="home-gradient">
       <v-container>
         <v-row class="home-text">
           <v-col cols="12" md="8">
-            <h2 class="top">Hello, I'm</h2>
+            <h2>Hello, I'm</h2>
             <h1>Syahra Zulya<span style="color: #EC5453"> Shania Maghfiroh</span></h1>
             <p class="mb-4">As a software engineering graduate, my ambition is to work in the IT field, specifically as a Web Developer and Quality Assurance. Open to work and quickly learn new technologies</p>
             <v-btn tile color="#EC5453" text @click="scroll('contact')">hire me</v-btn>
           </v-col>
           <v-col cols="12" md="4">
-            <v-img src="..\..\public\home.png" contain max-height="400" class="top1"></v-img>
+            <v-img src="..\..\public\home.png" contain max-height="400"></v-img>
           </v-col>
         </v-row>
       </v-container>
@@ -55,6 +54,8 @@ methods: {
 
 .home-gradient {
   background: linear-gradient(to right, #DFABBD, #79A0DC), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  padding-top: 8rem;
+  padding-bottom: 3rem;
 }
 .home-text {
   color: #ffffff;
