@@ -65,17 +65,16 @@
             <v-container>
                 <p class="project">Recent Project</p>
                 <v-row>
-                    <v-col cols="10">
+                    <v-col cols="12" md="10">
                         <h1 style="color: #EC5453">My Portfolio</h1>
                     </v-col>
-                    <v-col cols="2">
-                        <div class="visit-github">
-                            <v-card color="#EC5453" height="40px">
-                                <a href="https://github.com/syahraazly">
-                                    <img src="github1.png" alt="">
-                                    <span>Visit My GitHub</span>
-                                </a>
-                            </v-card>
+                    <v-col cols="12" md="2">
+                        <div class="github">
+                            <a href="https://github.com/syahraazly" target="_blank">
+                                <v-btn class="text-none" color="#EC5453" prepend-icon="mdi-github" style="font-size: 10px">
+                                    View My Github
+                                </v-btn>
+                            </a>
                         </div>
                     </v-col>
                 </v-row>
@@ -154,34 +153,9 @@ export default{
 .portfolio {
     padding: 3rem;
 }
-.visit-github {
-    text-align: center;
-    /* display: flex; */
-    /* padding-top: 25px;
-    height: 100px; */
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    /* display: flex; */
-    /* place-items: center; */
-}
-.visit-github img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-top: 10px;
-    /* display: flex; */
-}
-.visit-github a {
+.github a{
     text-decoration: none;
     color: #ffffff;
-    font-size: 10px;
-    margin-bottom: 10px;
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* padding-top: 2rem ; */
-
 }
 .card-text-custom {
     margin-top: 2rem;
