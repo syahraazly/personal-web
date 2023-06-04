@@ -18,24 +18,7 @@
       </v-container>
     </div>
 
-      <v-row>
-      <!-- about -->
-      <div class="about-gradient">
-      <v-col cols="12" class="padd">
-        <div class="first" id="about">
-          <v-row>
-            <v-col cols="12">
-              <div class="child bgColor1">
-                <v-icon color="#a7121d" x-large class="ml-3">
-                  mdi-pallete-swatch
-                </v-icon>
-              </div>
-            </v-col>
-          </v-row>
-        </div>
-      </v-col>
-      </div>
-    </v-row>
+  <About/>
   <Experience/>
   <!-- <Project/> -->
   <Contact />
@@ -47,8 +30,8 @@ import { defineComponent } from 'vue';
 
 // Components
 import Navbar from '../components/Navbar.vue';
+import About from '../components/About.vue';
 import Experience from '../components/Experience.vue';
-// import Project from '../components/Project.vue';
 import Contact from '../components/Contact.vue';
 
 export default defineComponent({
@@ -61,6 +44,7 @@ methods: {
   },
   components: {
     Navbar,
+    About,
     Experience,
     // Project,
     Contact
