@@ -71,43 +71,33 @@
 </template>
 <script>
 import emailjs from '@emailjs/browser';
+import {createToast} from 'mosha-vue-toastify';
+import 'mosha-vue-toastify/dist/style.css'
 
 export default{
     name : 'AppContact',
     data(){
         return {
-            isEmailSent: false,
-            isEmailBounced: false,
-            isEmailRequired: false,
-            
-                from_name: '',
-                email: '',
-                message: ''
-            
+            from_name: '',
+            email: '',
+            message: ''
         }
     },
     methods: {
         sendEmail(){
-            // const templateParams = {
-            //     name: this.formData.name,
-            //     email: this.formData.email,
-            //     phoneNumber: this.formData.phoneNumber,
-            //     message: this.formData.message
-            // }
             try {
                 if (this.from_name === '' || this.email === '' || this.message === ''){
-                    this.isEmailRequired
+                    this.createAlert("All fields are required", "danger", 2000)
                     return;
                 }
                 emailjs.send("service_sy54zwlh5w","template_fs57mrr", {
                     from_name: this.from_name,
                     email: this.email,
                     message: this.message,
-                    reply_to: this.email
                 }, 'DfVL9RR2ta3XaHSk0');
-                this.isEmailSent
+                this.createAlert("Email sent successfully", "success", 2000);
             } catch(error) {
-                this.isEmailBounced
+                this.createAlert("Something went wrong ${error}", "danger", 5000);
                 console.log({error})
             }
 
@@ -115,6 +105,21 @@ export default{
             this.from_name = ''
             this.email = ''
             this.message = ''
+        },
+        createAlert(message, type, timeout) {
+            createToast(message, {
+                position: "bottom-center",
+                hideProgressBar: true,
+                type: type,
+                timeout: timeout,
+                dismissible: true,
+                pauseOnFocusLoss: true,
+                pauseOnHover: true,
+                closeOnClick: true,
+                closeButton: true,
+                icon: true,
+                rtl: false,
+            });
         }
     }
 
