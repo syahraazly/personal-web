@@ -28,19 +28,19 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-form @submit.prevent="sendEmail">
+                    <v-form>
                         <div class="form-custom">
-                            <v-text-field v-model="formData.name" class="form-custom" label="Name" variant="outlined"></v-text-field>
+                            <v-text-field v-model="name" class="form-custom" label="Name" variant="outlined"></v-text-field>
                             <v-row>
                                 <v-col cols="12" md="6">
-                                    <v-text-field v-model="formData.email" label="Email" variant="outlined"></v-text-field>
+                                    <v-text-field v-model="email" label="Email" variant="outlined"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" md="6">
-                                    <v-text-field v-model="formData.phoneNumber" label="Phone Number" variant="outlined"></v-text-field>
+                                    <v-text-field v-model="phoneNumber" label="Phone Number" variant="outlined"></v-text-field>
                                 </v-col>
                             </v-row>
-                            <v-textarea v-model="formData.message" label="Message" variant="outlined"></v-textarea>
-                            <v-btn tile color="#EC5453" block size="x-large">Submit</v-btn>
+                            <v-textarea v-model="message" label="Message" variant="outlined"></v-textarea>
+                            <v-btn tile color="#EC5453" block size="x-large" @click="sendEmail">Submit</v-btn>
                         </div>
                         <v-alert
                             v-if="isEmailSent"
@@ -60,6 +60,15 @@
                         >
                             Email Bounced!
                         </v-alert>
+                        <v-alert
+                            v-if="isEmailRequired"
+                            color="#2A3B4D"
+                            theme="dark"
+                            icon="mdi-alert"
+                            dense
+                        >
+                            All field are required!
+                        </v-alert>
                     </v-form>
                 </v-col>
             </v-row>
@@ -76,31 +85,45 @@ export default{
         return {
             isEmailSent: false,
             isEmailBounced: false,
-            formData : {
+            isEmailRequired: false,
+            
                 name: '',
                 email: '',
                 phoneNumber: '',
                 message: ''
-            }
+            
         }
     },
     methods: {
         sendEmail(){
-            const templateParams = {
-                name: this.formData.name,
-                email: this.formData.email,
-                phoneNumber: this.formData.phoneNumber,
-                message: this.formData.message
+            // const templateParams = {
+            //     name: this.formData.name,
+            //     email: this.formData.email,
+            //     phoneNumber: this.formData.phoneNumber,
+            //     message: this.formData.message
+            // }
+            try {
+                if (this.name === '' || this.email === '' || this.phoneNumber === '' || this.message === ''){
+                    this.isEmailRequired
+                    return;
+                }
+                emailjs.send('service_sy54zwlh5w', 'template_4rq9sh1', {
+                    name: this.name,
+                    email: this.email,
+                    phoneNumber: this.phoneNumber,
+                    message: this.message
+                }, 'DfVL9RR2ta3XaHSk0');
+                this.isEmailSent
+            } catch(error) {
+                this.isEmailBounced
+                console.log({error})
             }
 
-            emailjs.sendForm('service_sy54zwlh5w', 'template_4rq9sh1', templateParams, 'DfVL9RR2ta3XaHSk0')
-            .then((resp) => {
-                this.isEmailSent
-                console.log(resp)
-            }).catch((error) => {
-                this.isEmailBounced
-                console.log(error)
-            })
+            // Reset form field
+            this.name = ''
+            this.email = ''
+            this.phoneNumber = ''
+            this.message = ''
         }
     }
 
