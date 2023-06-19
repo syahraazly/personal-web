@@ -69,6 +69,7 @@
 </template>
 <script>
 import emailjs from '@emailjs/browser';
+
 export default{
     name : 'AppContact',
     data(){
@@ -92,7 +93,7 @@ export default{
                 message: this.formData.message
             }
 
-            emailjs.send('service_sy54zwlh5w', 'template_4rq9sh1', templateParams, 'DfVL9RR2ta3XaHSk0')
+            emailjs.sendForm('service_sy54zwlh5w', 'template_4rq9sh1', templateParams, 'DfVL9RR2ta3XaHSk0')
             .then((resp) => {
                 this.isEmailSent
                 console.log(resp)
