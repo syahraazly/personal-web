@@ -28,20 +28,38 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-form>
+                    <v-form @submit.prevent="sendEmail">
                         <div class="form-custom">
-                            <v-text-field class="form-custom" label="Name" variant="outlined"></v-text-field>
+                            <v-text-field v-model="formData.name" class="form-custom" label="Name" variant="outlined"></v-text-field>
                             <v-row>
                                 <v-col cols="12" md="6">
-                                    <v-text-field label="Email" variant="outlined"></v-text-field>
+                                    <v-text-field v-model="formData.email" label="Email" variant="outlined"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" md="6">
-                                    <v-text-field label="Phone Number" variant="outlined"></v-text-field>
+                                    <v-text-field v-model="formData.phoneNumber" label="Phone Number" variant="outlined"></v-text-field>
                                 </v-col>
                             </v-row>
-                            <v-textarea label="Message" variant="outlined"></v-textarea>
+                            <v-textarea v-model="formData.message" label="Message" variant="outlined"></v-textarea>
                             <v-btn tile color="#EC5453" block size="x-large">Submit</v-btn>
                         </div>
+                        <v-alert
+                            v-if="isEmailSent"
+                            color="#EC5453"
+                            theme="dark"
+                            icon="mdi-check"
+                            dense
+                        >
+                            Email Sent!
+                        </v-alert>
+                        <v-alert
+                            v-if="isEmailBounced"
+                            color="#2A3B4D"
+                            theme="dark"
+                            icon="mdi-alert"
+                            dense
+                        >
+                            Email Bounced!
+                        </v-alert>
                     </v-form>
                 </v-col>
             </v-row>
@@ -50,9 +68,40 @@
 </v-app>
 </template>
 <script>
-
+import emailjs from '@emailjs/browser';
 export default{
-    name : 'AppContact'
+    name : 'AppContact',
+    data(){
+        return {
+            isEmailSent: false,
+            isEmailBounced: false,
+            formData : {
+                name: '',
+                email: '',
+                phoneNumber: '',
+                message: ''
+            }
+        }
+    },
+    methods: {
+        sendEmail(){
+            const templateParams = {
+                name: this.formData.name,
+                email: this.formData.email,
+                phoneNumber: this.formData.phoneNumber,
+                message: this.formData.message
+            }
+
+            emailjs.send('service_sy54zwlh5w', 'template_4rq9sh1', templateParams, 'DfVL9RR2ta3XaHSk0')
+            .then((resp) => {
+                this.isEmailSent
+                console.log(resp)
+            }).catch((error) => {
+                this.isEmailBounced
+                console.log(error)
+            })
+        }
+    }
 
 }
 </script>
