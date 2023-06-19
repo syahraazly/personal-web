@@ -30,15 +30,8 @@
                 <v-col cols="12" md="6">
                     <v-form>
                         <div class="form-custom">
-                            <v-text-field v-model="name" class="form-custom" label="Name" variant="outlined"></v-text-field>
-                            <v-row>
-                                <v-col cols="12" md="6">
-                                    <v-text-field v-model="email" label="Email" variant="outlined"></v-text-field>
-                                </v-col>
-                                <v-col cols="12" md="6">
-                                    <v-text-field v-model="phoneNumber" label="Phone Number" variant="outlined"></v-text-field>
-                                </v-col>
-                            </v-row>
+                            <v-text-field v-model="from_name" class="form-custom" label="Name" variant="outlined"></v-text-field>
+                            <v-text-field v-model="email" label="Email" variant="outlined"></v-text-field>     
                             <v-textarea v-model="message" label="Message" variant="outlined"></v-textarea>
                             <v-btn tile color="#EC5453" block size="x-large" @click="sendEmail">Submit</v-btn>
                         </div>
@@ -87,9 +80,8 @@ export default{
             isEmailBounced: false,
             isEmailRequired: false,
             
-                name: '',
+                from_name: '',
                 email: '',
-                phoneNumber: '',
                 message: ''
             
         }
@@ -103,14 +95,13 @@ export default{
             //     message: this.formData.message
             // }
             try {
-                if (this.name === '' || this.email === '' || this.phoneNumber === '' || this.message === ''){
+                if (this.from_name === '' || this.email === '' || this.message === ''){
                     this.isEmailRequired
                     return;
                 }
-                emailjs.send('service_sy54zwlh5w', 'template_4rq9sh1', {
-                    name: this.name,
+                emailjs.send("service_sy54zwlh5w","template_fs57mrr", {
+                    from_name: this.from_name,
                     email: this.email,
-                    phoneNumber: this.phoneNumber,
                     message: this.message
                 }, 'DfVL9RR2ta3XaHSk0');
                 this.isEmailSent
@@ -120,9 +111,8 @@ export default{
             }
 
             // Reset form field
-            this.name = ''
+            this.from_name = ''
             this.email = ''
-            this.phoneNumber = ''
             this.message = ''
         }
     }
