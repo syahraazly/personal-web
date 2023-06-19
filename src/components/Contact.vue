@@ -102,7 +102,8 @@ export default{
                 emailjs.send("service_sy54zwlh5w","template_fs57mrr", {
                     from_name: this.from_name,
                     email: this.email,
-                    message: this.message
+                    message: this.message,
+                    reply_to: this.email
                 }, 'DfVL9RR2ta3XaHSk0');
                 this.isEmailSent
             } catch(error) {
