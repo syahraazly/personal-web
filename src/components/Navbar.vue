@@ -1,22 +1,58 @@
 <template>
-    <v-app-bar app color="#DFABBD" class="px-8">
-        <v-spacer></v-spacer>
-        <v-btn text @click="scroll('home')">Home</v-btn>
-        <v-btn text @click="scroll('about')">About</v-btn>
-        <v-btn text @click="scroll('experience')">Experience</v-btn>
-        <v-btn text @click="scroll('contact')">Contact</v-btn>
-    </v-app-bar>
+  <div class="navbar">
+    <header>
+      <a href="#"><span>S</span>YH<span>R</span>Z<span>.</span></a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  </div>
 </template>
-<script>
-// import { defineComponent } from '@vue/composition-api'
 
+<script>
 export default {
-    name: 'AppNavbar',
-    methods: {
-scroll(refName){
-    const element = document.getElementById(refName);
-    element.scrollIntoView({behavior: "smooth"});
-}
-    }
-}
+  name: "NavbarView"
+};
 </script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 120px;
+  background: #dfabbd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+a {
+  font-size: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2rem;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #ec5453;
+}
+</style>

@@ -160,6 +160,9 @@ export default{
 .card-text-custom {
     margin-top: 2rem;
 }
+.card-text-custom span {
+    font-size: 15px;
+}
 .card-text-custom a {
     color: #EC5453;
     display: flex;
