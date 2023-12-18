@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
-// import tailwinds from './assets/css/tailwind.css';
+import './assets/style.css';
 import { loadFonts } from './plugins/webfontloader'
 
 loadFonts()
