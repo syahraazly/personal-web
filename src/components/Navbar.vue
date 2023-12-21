@@ -1,12 +1,12 @@
 <template>
   <div class="navbar">
     <header>
-      <a href="#"><span>S</span>YH<span>R</span>Z<span>.</span></a>
+      <a href="#"><span>syahraazly</span></a>
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <!-- <a href="#contact">Contact</a> -->
       </nav>
     </header>
   </div>
@@ -24,6 +24,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  color: #ffffff;
 }
 
 header {
@@ -32,7 +33,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 120px;
-  background: #dfabbd;
+  background: #112032;
   display: flex;
   justify-content: space-between;
   align-items: center;

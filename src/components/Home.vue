@@ -10,22 +10,26 @@
               Developer and Quality Assurance</span> based in East Java. <br> Below are some of the projects I've worked
             on. <br> Thanks for stopping by! Read more about me <a href="/CV_Syahra Zulya Shania Maghfiroh.pdf"
               download>here</a>.</h5>
-
-          <!-- <h2>Hello, I'm</h2>
-            <h1>
-              Syahra Zulya<span style="color: #ec5453"> Shania Maghfiroh</span>
-            </h1>
-            <p class="mb-4">
-              As a software engineering graduate, my ambition is to work in the
-              IT field, specifically as a Web Developer and Quality Assurance.
-              Open to work and quickly learn new technologies
-            </p>
-            <v-btn tile color="#EC5453" text @click="scroll('contact')"
-              >hire me</v-btn
-            > -->
         </v-col>
       </v-row>
     </v-container>
+    <div class="home-contact">
+      <a href="https://github.com/syahraazly" target="_blank">
+        <i class='fab fa-github-square' style='font-size:48px; color: #112032'></i>
+      </a>
+      <a href="https://www.instagram.com/syahraazly" target="_blank">
+        <i class='fab fa-instagram' style='font-size:48px; color: #112032'></i>
+      </a>
+      <a href="https://www.linkedin.com/in/syahraazly" target="_blank">
+        <i class='fab fa-linkedin' style='font-size:48px; color: #112032'></i>
+      </a>
+      <a href="mailto:syahraazly@gmail.com" target="_blank">
+        <i class='far fa-envelope' style='font-size:48px; color: #112032'></i>
+      </a>
+      <a href="https://open.spotify.com/user/3uij17vovw7e5yz9uo095jqtk?si=wQj7UOvMTyOP8sc3inM1-g" target="_blank">
+        <i class='fab fa-spotify' style='font-size:48px; color: #112032'></i>
+      </a>
+    </div>
   </div>
 </template>
 <script>
@@ -49,6 +53,7 @@ export default {
 
 .home-text {
   color: #ffffff;
+  padding-bottom: 5rem;
 }
 
 h5 a {
@@ -57,6 +62,20 @@ h5 a {
   text-decoration: underline;
   /* Opsional: Menghilangkan garis bawah */
   /* Tambahkan gaya tambahan jika perlu */
+}
+
+.home-contact {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  background: #ec5453;
+  display: flex;
+  justify-content: center;
+  gap: 10rem; /* Atur jarak antar ikon */
+}
+.home-contact a {
+  color: inherit; /* Mewarisi warna dari elemen i */
+  text-decoration: none; /* Menghilangkan underline pada link */
 }
 
 /* .about-gradient {
@@ -160,4 +179,5 @@ child {
 h1.number {
   font-size: 50px;
   font-weight: bold;
-}</style>
+}
+</style>
