@@ -3,10 +3,10 @@
     <Navbar />
     <Home/>
 
-    <About />
+    <!-- <About /> -->
     <Experience />
     <!-- <Project/> -->
-    <Contact />
+    <!-- <Contact /> -->
   </v-app>
 </template>
 
@@ -16,18 +16,18 @@ import { defineComponent } from "vue";
 // Components
 import Navbar from "../components/Navbar.vue";
 import Home from "../components/Home.vue";
-import About from "../components/About.vue";
+// import About from "../components/About.vue";
 import Experience from "../components/Experience.vue";
-import Contact from "../components/Contact.vue";
+// import Contact from "../components/Contact.vue";
 
 export default defineComponent({
   name: "HeroView",
   components: {
     Navbar,
     Home,
-    About,
+    // About,
     Experience,
-    Contact,
+    // Contact,
   },
 });
 </script>

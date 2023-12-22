@@ -94,9 +94,9 @@ export default {
   border-radius: 50px;
 }
 
-.download a:hover {
+/* .download a:hover {
   color: #6871d2;
-}
+} */
 
 @media (max-width: 768px) {
   .text {
