@@ -198,10 +198,8 @@ export default {
         text-align: left;
     }
 
-    .portfolio,
-    .experience,
-    .skills {
-        padding: 2rem;
+    .experience {
+        padding: 3rem;
     }
 }
 </style>

@@ -154,11 +154,11 @@ export default {
 </script>
 
 <style>
-.skills {
+.portfolio {
     padding-bottom: 6rem;
 }
 
-.experience {
+.skills {
     padding-bottom: 6rem;
 }
 
@@ -173,7 +173,7 @@ export default {
 }
 
 .skills .v-btn {
-    min-width: 120px;
+    min-width: 100px;
     height: 50px;
     color: #272727;
     /* background-color: #6871d2; */
@@ -182,10 +182,6 @@ export default {
 
 .skills .v-btn:hover {
     background-image: linear-gradient(to left, #6871d2, #ffffff);
-}
-
-.portfolio {
-    padding: 3rem;
 }
 
 .github {
@@ -217,7 +213,6 @@ export default {
 }
 
 .card-text-custom img {
-    margin-left: 1rem;
     width: 10px;
     height: 10px;
     display: flex;
@@ -239,34 +234,14 @@ export default {
 }
 
 @media (max-width: 768px) {
-    .experience {
-        margin-top: 8rem;
-    }
-
     .text-skills h1 {
         font-size: 1.5rem;
     }
 
-    .experience h4,
-    .experience-text h6 {
-        font-size: 1rem;
-    }
-
     .skills .v-btn,
     .techstacks .v-btn {
-        min-width: 100px;
+        min-width: 80px;
         font-size: x-small;
-    }
-
-    .experience-text {
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .portfolio,
-    .experience,
-    .skills {
-        padding: 2rem;
     }
 }
 </style>
