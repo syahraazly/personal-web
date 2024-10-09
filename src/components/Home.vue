@@ -9,9 +9,10 @@
           <div class="text">
             <h5>HELLO, <span style="color: #6871d2;">MY NAME IS</span></h5>
             <h1>SYAHRA <span style="color: #FEFEFE;">ZULYA</span></h1>
-            <h6>I'am a <span>Front End Web
-                Developer and Quality Assurance</span></h6>
-            <p>Based in East Java, Indonesia. Below are some of the projects I've worked on. <br> Thanks for stopping by!
+            <h6>I'am a <span>Frontend
+                Developer</span></h6>
+            <p>Based in East Java, Indonesia. Below are some of the projects I've worked on. <br> Thanks for stopping
+              by!
               Read more about me here.</p>
             <div class="social">
               <a href="https://www.instagram.com/syahraazly" target="_blank">
@@ -92,6 +93,12 @@ export default {
 
 .download {
   border-radius: 50px;
+}
+
+.download:hover {
+  background-image: linear-gradient(to left, #6871d2, #ffffff);
+  color: #272727;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* .download a:hover {

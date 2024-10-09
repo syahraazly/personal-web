@@ -21,9 +21,10 @@
                                     <h6 style="color: #6871d2; font-weight: 600;">Frontend Developer</h6>
                                     <p>Jul 2023 - Present</p>
                                 </div>
-                                <p>There are many tools and components available, for both coders and designers. Check out
-                                    Iconify documentation.</p>
-                                <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks</h6>
+                                <p>Successfully created and improved various features on the web portal for CIMB Niaga
+                                    clients, improving functionality and overall user experience.</p>
+                                <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks
+                                </h6>
                                 <div class="techstacks">
                                     <v-btn variant="outlined">
                                         Javascript
@@ -48,15 +49,16 @@
                                     <h6 style="color: #6871d2; font-weight: 600;">Fullstack Developer</h6>
                                     <p>Aug 2022 - Nov 2022</p>
                                 </div>
-                                <p>There are many tools and components available, for both coders and designers. Check out
-                                    Iconify documentation.</p>
+                                <p>Successfully managed and improved the web admin of Erpro, which is one of the
+                                    company's products, to improve its performance and efficiency.</p>
                                 <div class="experience-text">
                                     <h6 style="color: #6871d2; font-weight: 600;">Quality Assurance</h6>
                                     <p>Jul 2022 - Aug 2022</p>
                                 </div>
-                                <p>There are many tools and components available, for both coders and designers. Check out
-                                    Iconify documentation.</p>
-                                <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks</h6>
+                                <p>Carry out the role as QA by finding and reporting bugs in company products, both for
+                                    web and mobile versions.</p>
+                                <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks
+                                </h6>
                                 <div class="techstacks">
                                     <v-btn variant="outlined">
                                         HTML/CSS
@@ -88,8 +90,7 @@
                                     <h6 style="color: #6871d2; font-weight: 600;">Information Systems</h6>
                                     <p>2023 - Present</p>
                                 </div>
-                                <p>There are many tools and components available, for both coders and designers. Check out
-                                    Iconify documentation.</p>
+                                <p>Focus on studying business analysis and software development.</p>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -104,8 +105,8 @@
                                     <h6 style="color: #6871d2; font-weight: 600;">Software Engineering</h6>
                                     <p>2020 - 2023</p>
                                 </div>
-                                <p>There are many tools and components available, for both coders and designers. Check out
-                                    Iconify documentation.</p>
+                                <p>Focus on learning the basics of programming, application development, and software
+                                    project management.</p>
                             </v-col>
                         </v-row>
                     </v-col>
@@ -122,10 +123,19 @@
                     <v-btn variant="outlined">
                         HTML/CSS
                     </v-btn>
+                </v-col><v-col cols="4" md="2">
+                    <v-btn variant="outlined">
+                        Javascript
+                    </v-btn>
                 </v-col>
                 <v-col cols="4" md="2">
                     <v-btn variant="outlined">
                         PHP
+                    </v-btn>
+                </v-col>
+                <v-col cols="4" md="2">
+                    <v-btn variant="outlined">
+                        Go
                     </v-btn>
                 </v-col>
                 <v-col cols="4" md="2">
@@ -140,6 +150,11 @@
                 </v-col><v-col cols="4" md="2">
                     <v-btn variant="outlined">
                         VueJS
+                    </v-btn>
+                </v-col>
+                <v-col cols="4" md="2">
+                    <v-btn variant="outlined">
+                        NextJS
                     </v-btn>
                 </v-col>
                 <v-col cols="4" md="2">
@@ -193,7 +208,8 @@
                             <v-card-title>
                                 <h4 style="color: #6871d2">Wikusama Hotels</h4>
                             </v-card-title>
-                            <v-card-text>The appearance of the Hotel Booking website uses the Laravel framework and Vue.js.
+                            <v-card-text>The appearance of the Hotel Booking website uses the Laravel framework and
+                                Vue.js.
                                 <div class="card-text-custom">
                                     <a href="https://github.com/syahraazly/hotel-vue">
                                         <span>View Code</span>
@@ -357,7 +373,6 @@ export default {
 .skills .v-btn:hover,
 .techstacks .v-btn:hover {
     transition: background-color 0.3s ease, transform 0.3s ease;
-    transform: scale(1.1);
 }
 
 .github a:hover {
