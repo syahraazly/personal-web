@@ -2,12 +2,14 @@
   <div class="navbar">
     <header>
       <a href="#" style="color: #ffffff"><span>syahraazly</span></a>
+      <!-- Hamburger Menu -->
       <div class="burger-menu" @click="toggleMenu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div :class="{ 'line': true, 'rotate-line1': isMenuActive }"></div>
+        <div :class="{ 'line': true, 'hide-line2': isMenuActive }"></div>
+        <div :class="{ 'line': true, 'rotate-line3': isMenuActive }"></div>
       </div>
-      <nav ref="navMenu">
+      <!-- Menu Items -->
+      <nav :class="{ 'is-active': isMenuActive }">
         <a href="#home">Home</a>
         <a href="#experience">Experience</a>
         <a href="#project">Portfolio</a>
@@ -19,9 +21,14 @@
 <script>
 export default {
   name: "NavbarView",
+  data() {
+    return {
+      isMenuActive: false
+    };
+  },
   methods: {
     toggleMenu() {
-      this.$refs.navMenu.classList.toggle('is-active');
+      this.isMenuActive = !this.isMenuActive;
     }
   }
 };
@@ -41,15 +48,12 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 40px;
-  /* Penyesuaian padding untuk semua ukuran layar */
   background: rgba(0, 0, 0, 0.8);
-  /* Background hitam transparan */
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
   transition: background-color 0.3s;
-  /* Transisi background */
 }
 
 a {
@@ -57,6 +61,27 @@ a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+}
+
+nav {
+  display: none;
+  /* Hidden by default for mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+nav.is-active {
+  display: flex;
+  transform: translateX(0);
 }
 
 nav a {
@@ -72,38 +97,76 @@ nav a:hover {
   color: #6871d2;
 }
 
-/* Gaya untuk burger menu */
+/* Hamburger Menu */
 .burger-menu {
-  display: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
 }
 
-.burger-menu .line {
-  width: 25px;
-  height: 2px;
-  background-color: white;
-  margin: 5px 0;
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
 
-/* Gaya ketika di layar mobile */
+/* Hamburger Animations */
+.rotate-line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
 
+.hide-line2 {
+  opacity: 0;
+}
+
+.rotate-line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styling for Mobile */
 @media (max-width: 768px) {
-  .burger-menu {
-    display: block;
-  }
-
-   nav {
-    display: none;
+  nav {
     position: absolute;
-    top: 60px; /* Atur sesuai dengan tinggi navbar */
-    left: 0;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Sesuaikan dengan warna navbar */
-    transition: all 0.3s ease; /* Animasi untuk menampilkan dan menyembunyikan menu */
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
   }
 
   nav.is-active {
-    display: block;
+    transform: translateX(0);
+  }
+}
+
+/* Styling for Desktop */
+@media (min-width: 768px) {
+  .burger-menu {
+    display: none;
+    /* Hide hamburger on desktop */
+  }
+
+  nav {
+    display: flex;
+    /* Show navigation on desktop */
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+
+  nav a {
+    margin-left: 2rem;
   }
 }
 </style>
