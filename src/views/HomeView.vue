@@ -1,12 +1,14 @@
 <template>
   <v-app id="home">
     <Navbar />
-    <Home/>
-
-    <!-- <About /> -->
-    <Experience />
-    <!-- <Project/> -->
-    <!-- <Contact /> -->
+    <v-container>
+      <Home />
+  
+      <!-- <About /> -->
+      <Experience />
+      <Project />
+      <!-- <Contact /> -->
+    </v-container>
   </v-app>
 </template>
 
@@ -18,7 +20,7 @@ import Navbar from "../components/Navbar.vue";
 import Home from "../components/Home.vue";
 // import About from "../components/About.vue";
 import Experience from "../components/Experience.vue";
-// import Contact from "../components/Contact.vue";
+import Project from "../components/Project.vue";
 
 export default defineComponent({
   name: "HeroView",
@@ -27,7 +29,7 @@ export default defineComponent({
     Home,
     // About,
     Experience,
-    // Contact,
+    Project,
   },
 });
 </script>

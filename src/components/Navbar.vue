@@ -10,7 +10,7 @@
       <nav ref="navMenu">
         <a href="#home">Home</a>
         <a href="#experience">Experience</a>
-        <!-- <a href="#contact">Contact</a> -->
+        <a href="#project">Portfolio</a>
       </nav>
     </header>
   </div>

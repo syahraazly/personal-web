@@ -1,34 +1,32 @@
 <template>
   <div class="home">
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="6">
-          <v-img src="..\..\public\syahraazly.png" contain max-height="400"></v-img>
-        </v-col>
-        <v-col cols="12" md="6">
-          <div class="text">
-            <h5>HELLO, <span style="color: #6871d2;">MY NAME IS</span></h5>
-            <h1>SYAHRA <span style="color: #FEFEFE;">ZULYA</span></h1>
-            <h6>I'am a <span>Frontend
-                Developer</span></h6>
-            <p>Based in East Java, Indonesia. Below are some of the projects I've worked on. <br> Thanks for stopping
-              by!
-              Read more about me here.</p>
-            <div class="social">
-              <a href="https://www.instagram.com/syahraazly" target="_blank">
-                <i class='fab fa-instagram'></i>
-              </a>
-              <a href="https://www.linkedin.com/in/syahraazly" target="_blank">
-                <i class='fab fa-linkedin'></i>
-              </a>
-            </div>
-            <v-btn variant="outlined" class="download">
-              <a href="/CV_Syahra Zulya Shania Maghfiroh.pdf" download>DOWNLOAD CV</a>
-            </v-btn>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-img src="..\..\public\syahraazly.png" contain max-height="400"></v-img>
+      </v-col>
+      <v-col cols="12" md="6">
+        <div class="text">
+          <h5>HELLO, <span style="color: #6871d2;">MY NAME IS</span></h5>
+          <h1>SYAHRA <span style="color: #FEFEFE;">ZULYA</span></h1>
+          <h6>I'am a <span>Frontend
+              Developer</span></h6>
+          <p>Based in East Java, Indonesia. Below are some of the projects I've worked on. <br> Thanks for stopping
+            by!
+            Read more about me here.</p>
+          <div class="social">
+            <a href="https://www.instagram.com/syahraazly" target="_blank">
+              <i class='fab fa-instagram'></i>
+            </a>
+            <a href="https://www.linkedin.com/in/syahraazly" target="_blank">
+              <i class='fab fa-linkedin'></i>
+            </a>
           </div>
-        </v-col>
-      </v-row>
-    </v-container>
+          <v-btn variant="outlined" class="download">
+            <a href="/CV_Syahra Zulya Shania Maghfiroh.pdf" download>DOWNLOAD CV</a>
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 <script>
@@ -45,8 +43,8 @@ export default {
 <style>
 .home {
   background: #FEFEFE;
-  padding-top: 13rem;
-  padding-bottom: 7rem;
+  padding-top: 12rem;
+  padding-bottom: 6rem;
 }
 
 .text {
