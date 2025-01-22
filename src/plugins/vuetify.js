@@ -15,9 +15,7 @@ export default createVuetify({
     },
     theme: {
         themes: {
-            dark: {
-                background: '#111111'
-            }
+            dark: false
         }
     }
 
