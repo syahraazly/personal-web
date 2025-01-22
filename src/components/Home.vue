@@ -22,7 +22,7 @@
             </a>
           </div>
           <v-btn variant="outlined" class="download">
-            <a href="/CV_Syahra Zulya Shania Maghfiroh.pdf" download>DOWNLOAD CV</a>
+            <a href="/CV_2024.pdf" download>DOWNLOAD CV</a>
           </v-btn>
         </div>
       </v-col>
