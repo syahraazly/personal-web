@@ -1,112 +1,70 @@
 <template>
   <v-app id="contact">
-    <v-container>
-      <div class="contact">
-        <h1>CONTACT ME</h1>
-        <p style="color: #6871d2">The <span style="color: #272727">Personal Info</span></p> <br>
-      </div>
-      <v-card>
-        <v-form class="contact-form">
-          <div class="form-custom">
-            <v-text-field v-model="from_name" class="form-custom" label="Name" variant="outlined"></v-text-field>
-            <v-text-field v-model="email" label="Email" variant="outlined"></v-text-field>
-            <v-textarea v-model="message" label="Message" variant="outlined"></v-textarea>
-            <v-btn tile color="#6871d2" block size="x-large" @click="sendEmail">Submit</v-btn>
-          </div>
-          <v-alert v-if="isEmailSent" color="#EC5453" theme="dark" icon="mdi-check" dense>
-            Email Sent!
-          </v-alert>
-          <v-alert v-if="isEmailBounced" color="#2A3B4D" theme="dark" icon="mdi-alert" dense>
-            Email Bounced!
-          </v-alert>
-          <v-alert v-if="isEmailRequired" color="#2A3B4D" theme="dark" icon="mdi-alert" dense>
-            All field are required!
-          </v-alert>
-        </v-form>
-      </v-card>
-    </v-container>
+    <div class="contact">
+      <h1>Ready to take your business to the next level?</h1>
+      <p>Contact me today, and let’s discuss how I can help you achieve your goals!</p> <br>
+      <v-btn variant="outlined" size="large" rounded href="mailto:syahraazly@gmail.com" target="_blank" style="text-decoration: none; text-transform: none;
+              padding: 12px 24px; letter-spacing: 1px;">
+        Let's get in touch
+      </v-btn>
+    </div>
   </v-app>
 </template>
 <script>
-import emailjs from "@emailjs/browser";
-import { createToast } from "mosha-vue-toastify";
-import "mosha-vue-toastify/dist/style.css";
 
 export default {
   name: "AppContact",
-  data() {
-    return {
-      from_name: "",
-      email: "",
-      message: "",
-    };
-  },
-  methods: {
-    sendEmail() {
-      if (this.from_name === "" || this.email === "" || this.message === "") {
-        this.createAlert("All fields are required", "danger", 2000);
-        return;
-      }
-
-      emailjs.send(
-        "service_sy54zwlh5w",
-        "template_fs57mrr",
-        {
-          from_name: this.from_name,
-          email: this.email,
-          message: this.message,
-        },
-        "DfVL9RR2ta3XaHSk0"
-      )
-        .then((response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          this.createAlert("Email sent successfully", "success", 2000);
-          this.from_name = "";
-          this.email = "";
-          this.message = "";
-        }, (error) => {
-          console.log('FAILED...', error);
-          this.createAlert("Something went wrong", "danger", 5000);
-        });
-    },
-    createAlert(message, type, timeout) {
-      createToast(message, {
-        position: "bottom-center",
-        hideProgressBar: true,
-        type: type,
-        timeout: timeout,
-        dismissible: true,
-        pauseOnFocusLoss: true,
-        pauseOnHover: true,
-        closeOnClick: true,
-        closeButton: true,
-        icon: true,
-        rtl: false,
-      });
-    },
-  },
 };
 </script>
 <style>
+.v-application__wrap {
+  min-height: 0 !important;
+}
+
 .contact {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 10rem;
 }
 
 .contact h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.contact p {
   font-size: 2rem;
 }
 
-.contact-form {
-  padding: 4rem;
+/* untuk tablet */
+@media (max-width: 1024px) {
+  .contact h1 {
+    font-size: 3rem;
+  }
+
+  .contact p {
+    font-size: 1.5rem;
+  }
 }
 
-.v-btn {
-  transition: transform 0.3s ease;
+/* untuk layar hp */
+@media (max-width: 768px) {
+  .contact h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact p {
+    font-size: 1.2rem;
+  }
 }
 
-.v-btn:hover {
-  transform: scale(1.05);
+/* untuk layar kecil (hp kecil) */
+@media (max-width: 480px) {
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
 }
 </style>

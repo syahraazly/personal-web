@@ -7,7 +7,7 @@
       <!-- <About /> -->
       <Experience />
       <Project />
-      <!-- <Contact /> -->
+      <Contact />
     </v-container>
   </v-app>
 </template>
@@ -21,6 +21,7 @@ import Home from "../components/Home.vue";
 // import About from "../components/About.vue";
 import Experience from "../components/Experience.vue";
 import Project from "../components/Project.vue";
+import Contact from "../components/Contact.vue";
 
 export default defineComponent({
   name: "HeroView",
@@ -30,6 +31,7 @@ export default defineComponent({
     // About,
     Experience,
     Project,
+    Contact,
   },
 });
 </script>

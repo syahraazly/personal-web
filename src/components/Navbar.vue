@@ -13,6 +13,7 @@
         <a href="#home">Home</a>
         <a href="#experience">Experience</a>
         <a href="#project">Portfolio</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
   </div>
