@@ -1,5 +1,5 @@
 <template>
-    <v-app id="project">
+    <section id="project" class="section">
         <div class="portfolio">
             <div class="text-skills">
                 <h1>PORTFOLIO</h1>
@@ -66,7 +66,7 @@
         </div>
         <div class="skills">
             <div class="text-skills">
-                <h1>PROFESIONAL SKILL</h1>
+                <h1>PROFESSIONAL SKILLS</h1>
                 <p style="color: #6871d2">The <span style="color: #272727">Talents</span></p> <br>
             </div>
             <v-row class="skills">
@@ -77,6 +77,16 @@
                 </v-col><v-col cols="4" md="2">
                     <v-btn variant="outlined">
                         Javascript
+                    </v-btn>
+                </v-col>
+                <v-col cols="4" md="2">
+                    <v-btn variant="outlined">
+                        Swift
+                    </v-btn>
+                </v-col>
+                <v-col cols="4" md="2">
+                    <v-btn variant="outlined">
+                        SwiftUI
                     </v-btn>
                 </v-col>
                 <v-col cols="4" md="2">
@@ -110,6 +120,11 @@
                 </v-col>
                 <v-col cols="4" md="2">
                     <v-btn variant="outlined">
+                        Tailwind CSS
+                    </v-btn>
+                </v-col>
+                <v-col cols="4" md="2">
+                    <v-btn variant="outlined">
                         Quasar
                     </v-btn>
                 </v-col>
@@ -125,7 +140,7 @@
                 </v-col>
                 <v-col cols="4" md="2">
                     <v-btn variant="outlined">
-                        Saas
+                        Sass
                     </v-btn>
                 </v-col>
                 <v-col cols="4" md="2">
@@ -144,7 +159,7 @@
                 </v-col>
             </v-row>
         </div>
-    </v-app>
+    </section>
 </template>
 <script>
 
@@ -175,13 +190,21 @@ export default {
 .skills .v-btn {
     min-width: 100px;
     height: 50px;
-    color: #272727;
-    /* background-color: #6871d2; */
+    color: var(--text);
+    background: var(--surface);
+    border-color: var(--border);
     margin: 5px;
+    box-shadow: 0 5px 15px transparent;
+    transition: color .3s ease, background .3s ease, border-color .3s ease,
+        box-shadow .3s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
 }
 
 .skills .v-btn:hover {
-    background-image: linear-gradient(to left, #6871d2, #ffffff);
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    border-color: var(--primary);
+    box-shadow: 0 12px 26px color-mix(in srgb, var(--primary) 35%, transparent);
+    transform: translateY(-5px) scale(1.04);
 }
 
 .github {
@@ -194,8 +217,11 @@ export default {
 }
 
 .github .v-btn:hover {
-    background-image: linear-gradient(to left, #6871d2, #ffffff);
-    color: #272727;
+    color: #ffffff;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--primary) 30%, transparent);
+    transform: translateY(-4px);
 }
 
 .card-text-custom {
@@ -218,14 +244,8 @@ export default {
     display: flex;
 }
 
-.skills .v-btn:hover,
-.techstacks .v-btn:hover {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
 .github a:hover {
-    transition: color 0.3s ease;
-    color: #6871d2;
+    color: var(--primary);
 }
 
 .v-img {

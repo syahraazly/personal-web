@@ -1,15 +1,13 @@
 <template>
-  <v-app id="home">
-    <Navbar />
-    <v-container>
+  <div class="site-shell">
+    <Navbar :is-dark="isDark" @toggle-theme="toggleTheme" />
+    <main>
       <Home />
-  
-      <!-- <About /> -->
       <Experience />
       <Project />
       <Contact />
-    </v-container>
-  </v-app>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -32,6 +30,27 @@ export default defineComponent({
     Experience,
     Project,
     Contact,
+  },
+  data() {
+    return {
+      isDark: false,
+    };
+  },
+  created() {
+    const savedTheme = localStorage.getItem("syahraazly-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    this.isDark = savedTheme ? savedTheme === "dark" : prefersDark;
+    this.applyTheme();
+  },
+  methods: {
+    applyTheme() {
+      document.documentElement.dataset.theme = this.isDark ? "dark" : "light";
+    },
+    toggleTheme() {
+      this.isDark = !this.isDark;
+      localStorage.setItem("syahraazly-theme", this.isDark ? "dark" : "light");
+      this.applyTheme();
+    },
   },
 });
 </script>

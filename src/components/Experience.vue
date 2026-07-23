@@ -1,6 +1,5 @@
 <template>
-    <v-app id="experience">
-        <div class="experience">
+    <section id="experience" class="experience section">
             <div class="text-skills">
                 <h1>EXPERIENCE</h1>
                 <p style="color: #6871d2">The <span style="color: #272727">Journals</span></p> <br>
@@ -11,6 +10,51 @@
                     <v-row>
                         <v-col cols="2">
                             <v-btn icon="$vuetify" variant="tonal" color="#6871d2">
+                                <v-icon>mdi-apple</v-icon>
+                            </v-btn>
+                        </v-col>
+                        <v-col cols="10">
+                            <h6 style="font-weight: bold;">Apple Developer Academy @ UC, Jakarta</h6>
+                            <div class="experience-text">
+                                <h6 style="color: #6871d2; font-weight: 600;">iOS Developer</h6>
+                                <p>Mar 2026 - Present</p>
+                            </div>
+                            <p>Developing user-centered iOS products while learning product discovery, user research,
+                                interface design, Swift, and SwiftUI.</p>
+                            <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks</h6>
+                            <div class="techstacks">
+                                <v-btn variant="outlined">Swift</v-btn>
+                                <v-btn variant="outlined">SwiftUI</v-btn>
+                                <v-btn variant="outlined">iOS</v-btn>
+                            </div>
+                        </v-col>
+                    </v-row>
+                    <v-row>
+                        <v-col cols="2">
+                            <v-btn icon="$vuetify" variant="tonal" color="#6871d2">
+                                <v-icon>mdi-briefcase-outline</v-icon>
+                            </v-btn>
+                        </v-col>
+                        <v-col cols="10">
+                            <h6 style="font-weight: bold;">PT. Sigma Cipta Caraka (Telkomsigma)</h6>
+                            <div class="experience-text">
+                                <h6 style="color: #6871d2; font-weight: 600;">Software Developer</h6>
+                                <p>Apr 2025 - Present</p>
+                            </div>
+                            <p>Contributing to WFM TA, SALMA, and iHLD by improving filters and data accuracy,
+                                developing new menu modules, building multi-role access management, and integrating
+                                order workflows with backend APIs.</p>
+                            <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks</h6>
+                            <div class="techstacks">
+                                <v-btn variant="outlined">Javascript</v-btn>
+                                <v-btn variant="outlined">Vue.js</v-btn>
+                                <v-btn variant="outlined">REST API</v-btn>
+                            </div>
+                        </v-col>
+                    </v-row>
+                    <v-row>
+                        <v-col cols="2">
+                            <v-btn icon="$vuetify" variant="tonal" color="#6871d2">
                                 <v-icon>mdi-briefcase-outline</v-icon>
                             </v-btn>
                         </v-col>
@@ -18,10 +62,10 @@
                             <h6 style="font-weight: bold;">PT. Infosys Solusi Terpadu</h6>
                             <div class="experience-text">
                                 <h6 style="color: #6871d2; font-weight: 600;">Frontend Developer</h6>
-                                <p>Jul 2023 - Present</p>
+                                <p>Jul 2023 - Apr 2025</p>
                             </div>
-                            <p>Successfully created and improved various features on the web portal for CIMB Niaga
-                                clients, improving functionality and overall user experience.</p>
+                            <p>Delivered website enhancements and back-office features for Bank Nobu and Bank CIMB
+                                Niaga, collaborating with design and backend teams throughout the project lifecycle.</p>
                             <h6 style="font-weight: 600; margin-top: 1rem; margin-bottom: 1rem;">Related Techstacks
                             </h6>
                             <div class="techstacks">
@@ -45,13 +89,12 @@
                         <v-col cols="10">
                             <h6 style="font-weight: bold;">PT. Artcak Teknologi Indonesia</h6>
                             <div class="experience-text">
-                                <h6 style="color: #6871d2; font-weight: 600;">Fullstack Developer</h6>
-                                <p>Aug 2022 - Nov 2022</p>
+                                <h6 style="color: #6871d2; font-weight: 600;">Junior Software Developer</h6>
+                                <p>Jul 2022 - Nov 2022</p>
                             </div>
-                            <p>Successfully managed and improved the web admin of Erpro, which is one of the
-                                company's products, to improve its performance and efficiency.</p>
+                            <p>Developed additional Laravel-based web features and created effective landing pages.</p>
                             <div class="experience-text">
-                                <h6 style="color: #6871d2; font-weight: 600;">Quality Assurance</h6>
+                                <h6 style="color: #6871d2; font-weight: 600;">Quality Assurance Intern</h6>
                                 <p>Jul 2022 - Aug 2022</p>
                             </div>
                             <p>Carry out the role as QA by finding and reporting bugs in company products, both for
@@ -110,8 +153,7 @@
                     </v-row>
                 </v-col>
             </v-row>
-        </div>
-    </v-app>
+    </section>
 </template>
 <script>
 
@@ -165,17 +207,24 @@ export default {
     margin-right: 5px;
     margin-bottom: 5px;
     font-size: small;
-    /* color: #6871d2; */
+    color: var(--text);
+    background: var(--surface-soft);
+    border-color: var(--border);
+    transition: color .3s ease, background .3s ease, border-color .3s ease,
+        box-shadow .3s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
 }
 
 .techstacks .v-btn:hover {
-    background-image: linear-gradient(to left, #6871d2, #ffffff);
-    color: #272727;
+    color: #ffffff;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--primary) 30%, transparent);
+    transform: translateY(-4px) scale(1.03);
 }
 
 @media (max-width: 768px) {
     .experience {
-        margin-top: 8rem;
+        margin-top: 0;
     }
 
     .text-skills h1 {
@@ -199,7 +248,7 @@ export default {
     }
 
     .experience {
-        padding: 3rem;
+        padding-inline: 0;
     }
 }
 </style>

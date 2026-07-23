@@ -1,26 +1,23 @@
 <template>
-    <v-app id="about">
-        <div class="about">
+    <section id="about" class="about section">
             <div class="image-content"></div>
             <div class="text-content">
                 <h2
                     style="color: #ec5453; font-weight: bold; font-size: 40px; text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
                     About Me</h2>
-                <p>Hi, my name is Syahra. I have a complex relationship with coding, which I sometimes like and
-                    sometimes do not. However, for over 1 year, I've been exploring IT and focusing on Vue.js and
-                    Laravel. Although I wasn't interested in the front end at first, over time, I decided to study and
-                    pursue the field.</p>
+                <p>Hi, I'm Syahra, a software engineer transitioning from frontend to fullstack development. My
+                    professional experience includes developing web applications with Next.js, Vue.js, and Tailwind
+                    CSS for banking and enterprise projects.</p>
                 <br>
-                <p>During this journey, I managed to develop a solid understanding of web development using Vue.js to
-                    create dynamic and interactive user interfaces. I also have expertise in using Laravel as a powerful
-                    back-end framework.</p>
+                <p>I'm currently pursuing a degree in Information Systems while learning product development and iOS
+                    development at the Apple Developer Academy @ UC, Jakarta. Through projects such as Cacta and
+                    FitChick, I'm learning to begin with real user needs before turning ideas into products.</p>
                 <br>
-                <p>I really enjoy the challenge of completing projects involving this technology and am now increasingly
-                    excited to continue improving my skills in the field of web development.</p>
+                <p>I'm open to opportunities in Business Analysis, Frontend, Fullstack, and other roles where I can
+                    combine technical execution, collaboration, and problem-solving to create meaningful products.</p>
             </div>
             <div class="image-content"></div>
-        </div>
-    </v-app>
+    </section>
 </template>
 <script>
 

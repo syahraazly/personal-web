@@ -1,3 +1,195 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f7f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f0f0f8;
+  --text: #20202a;
+  --muted: #666677;
+  --primary: #6871d2;
+  --primary-soft: #aab0ee;
+  --border: rgba(32, 32, 42, .11);
+  --shadow: 0 20px 55px rgba(54, 57, 110, .13);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #101116;
+  --surface: #191a22;
+  --surface-soft: #222430;
+  --text: #f3f3f7;
+  --muted: #adafbd;
+  --primary: #949bf0;
+  --primary-soft: #555da9;
+  --border: rgba(255, 255, 255, .1);
+  --shadow: 0 22px 60px rgba(0, 0, 0, .35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--text);
+  background: var(--background);
+  transition: color .35s ease, background-color .35s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.v-application,
+.site-shell {
+  color: var(--text) !important;
+  background: var(--background) !important;
+}
+
+.site-shell {
+  min-height: 100vh;
+  transition: color .35s ease, background-color .35s ease;
+}
+
+.section {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+  padding-block: clamp(64px, 9vw, 110px);
+}
+
+.v-card {
+  color: var(--text) !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--shadow) !important;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease !important;
+}
+
+.v-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 28px 65px rgba(54, 57, 110, .22) !important;
+}
+
+.v-card .v-img {
+  transition: transform .55s cubic-bezier(.2, .8, .2, 1), filter .4s ease;
+}
+
+.v-card:hover .v-img {
+  transform: scale(1.055);
+  filter: saturate(1.08);
+}
+
+.v-btn {
+  color: var(--text);
+  border-color: var(--border);
+  transition: transform .25s ease, color .25s ease, background .25s ease !important;
+}
+
+.text-skills h1 {
+  color: var(--text);
+  letter-spacing: .05em;
+}
+
+.text-skills p {
+  color: var(--primary) !important;
+}
+
+.text-skills p span {
+  color: var(--text) !important;
+}
+
+.text-skills p,
+.experience h4,
+.experience h6,
+.experience p,
+.portfolio,
+.skills,
+.contact {
+  color: var(--text);
+}
+
+.portfolio h4,
+.card-text-custom a {
+  color: var(--primary) !important;
+}
+
+.skills .v-btn:hover,
+.techstacks .v-btn:hover,
+.github .v-btn:hover {
+  color: #fff !important;
+}
+
+.experience > .v-row > .v-col > .v-row:hover .v-btn[icon] {
+  color: #fff !important;
+  background: var(--primary) !important;
+  transform: rotate(-7deg) scale(1.08);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--primary) 28%, transparent);
+}
+
+@supports (animation-timeline: view()) {
+  .experience > .v-row > .v-col > .v-row,
+  .portfolio .v-card,
+  .skills .v-col,
+  .contact > * {
+    animation: section-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 28%;
+  }
+}
+
+@keyframes section-reveal {
+  from { opacity: 0; transform: translateY(32px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.experience > .v-row > .v-col {
+  padding-inline: clamp(8px, 2vw, 24px);
+}
+
+.experience > .v-row > .v-col > .v-row {
+  margin-bottom: 24px;
+  padding: 20px 10px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+.experience > .v-row > .v-col > .v-row:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: min(100% - 28px, 620px);
+    padding-block: 60px;
+  }
+  .v-card { max-width: 100% !important; }
+}
