@@ -1,34 +1,38 @@
 <template>
   <section id="home" class="home section">
     <v-row>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="4">
         <div class="hero-visual">
-          <span class="orbit orbit-one"></span>
-          <span class="orbit orbit-two"></span>
           <v-img src="/syahraazly.png" contain max-height="520" alt="Syahraazly illustration"></v-img>
         </div>
+        <div class="profile-meta">
+          <h2>Syahra Zulya</h2>
+          <p>@syahraazly</p>
+          <span><i></i> Available for collaboration</span>
+        </div>
       </v-col>
-      <v-col cols="12" md="6">
-        <div class="text">
-          <h5>HELLO, <span>MY NAME IS</span></h5>
-          <h1>SYAHRA <span>ZULYA</span></h1>
-          <h6>I'm a <span>Software Developer</span></h6>
+      <v-col cols="12" md="8">
+        <div class="readme-bar">
+          <span><v-icon size="16">mdi-book-open-variant</v-icon> README.md</span>
+          <span>···</span>
+        </div>
+        <article class="text">
+          <div class="eyebrow"><span>main</span> / README.md</div>
+          <h1>Hi, I'm Syahra <span class="wave">👋</span></h1>
+          <h6>Software Developer · Product Explorer · iOS Learner</h6>
           <p>Based in Jakarta, Indonesia. I'm a software engineer transitioning from frontend to fullstack
             development, with professional experience building web applications using Next.js, Vue.js, and
             Tailwind CSS. I'm currently expanding my product development and iOS skills at the Apple Developer
             Academy @ UC, Jakarta.</p>
+          <div class="terminal-line"><span>$</span> currently_building --human-centered-products <b>█</b></div>
           <div class="social">
-            <a href="https://www.instagram.com/syahraazly" target="_blank">
-              <i class='fab fa-instagram'></i>
-            </a>
             <a href="https://www.linkedin.com/in/syahraazly" target="_blank">
-              <i class='fab fa-linkedin'></i>
+              <i class='fab fa-linkedin'></i> LinkedIn
             </a>
+            <a href="https://github.com/syahraazly" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
-          <v-btn variant="outlined" class="download">
-            <a href="/CV_2024.pdf" download>DOWNLOAD CV</a>
-          </v-btn>
-        </div>
+          <a class="download" href="/CV_2024.pdf" download><v-icon size="17">mdi-download</v-icon> Download CV</a>
+        </article>
       </v-col>
     </v-row>
   </section>
@@ -49,7 +53,9 @@ export default {
   min-height: 100vh;
   display: grid;
   align-items: center;
-  padding-top: 9rem;
+  margin-top: 0;
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
 }
 
 .text {
@@ -57,30 +63,17 @@ export default {
   animation: reveal-up .8s ease both;
 }
 
-.text h5 {
-  font-weight: bold;
-  letter-spacing: .14em;
-  color: var(--muted);
-}
-
-.text h5 span {
-  color: var(--primary);
-}
-
 .text h1 {
-  font-weight: bold;
-  font-size: 3rem;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--text);
-  color: var(--primary);
-}
-
-.text h1 span {
-  color: var(--surface);
+  margin: 25px 0 8px;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -.045em;
 }
 
 .text h6 {
-  margin-bottom: 3rem;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-family: var(--font-mono);
 }
 
 .text h6 span {
@@ -92,74 +85,40 @@ export default {
   font-size: small;
 }
 
-.social i {
-  font-size: 40px;
-  color: var(--text);
-  transition: color 0.3s ease;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 2rem;
-}
-
-.social i:hover {
-  color: var(--primary);
-}
-
-.download {
-  border-radius: 50px;
-}
-
-.download:hover {
-  background: var(--primary);
-  color: #ffffff;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  transform: translateY(-2px);
-}
-
 .hero-visual {
   position: relative;
-  max-width: 520px;
+  max-width: 290px;
   margin: auto;
-  isolation: isolate;
   animation: reveal-scale .9s .1s ease both;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 12% 8% 0;
-  z-index: -2;
-  border-radius: 48% 52% 42% 58%;
-  background: linear-gradient(145deg, var(--primary), var(--primary-soft));
-  animation: morph 8s ease-in-out infinite;
-}
-
-.orbit {
-  position: absolute;
-  z-index: -1;
-  border: 1px solid var(--primary);
+  overflow: hidden;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
   border-radius: 50%;
-  opacity: .35;
-  animation: spin 14s linear infinite;
 }
-.orbit::after { content: ""; position: absolute; width: 11px; height: 11px; top: 8%; left: 15%; border-radius: 50%; background: var(--primary); }
-.orbit-one { inset: 4% 2% 3%; }
-.orbit-two { inset: 13% 10% 8%; animation-direction: reverse; animation-duration: 10s; }
-
-@keyframes morph {
-  0%, 100% { border-radius: 48% 52% 42% 58%; transform: rotate(-2deg); }
-  50% { border-radius: 58% 42% 55% 45%; transform: rotate(2deg); }
-}
-@keyframes spin { to { transform: rotate(360deg); } }
+.profile-meta { max-width: 290px; margin: 20px auto 0; }
+.profile-meta h2 { font-size: 1.3rem; }
+.profile-meta p { color: var(--muted); font-family: var(--font-mono); }
+.profile-meta span { display: block; margin-top: 13px; color: var(--muted); font-size: .78rem; }
+.profile-meta i { display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 16%, transparent); }
+.readme-bar { display: flex; justify-content: space-between; padding: 11px 16px; color: var(--muted); background: var(--surface-soft); border: 1px solid var(--border); border-bottom: 0; border-radius: 10px 10px 0 0; font-family: var(--font-mono); font-size: .78rem; }
+.readme-bar span:first-child { display: flex; align-items: center; gap: 7px; color: var(--text); }
+.text { padding: clamp(24px, 5vw, 52px); background: var(--surface); border: 1px solid var(--border); border-radius: 0 0 10px 10px; }
+.eyebrow { color: var(--muted); font-family: var(--font-mono); font-size: .75rem; }
+.eyebrow span { color: var(--accent); }
+.wave { display: inline-block; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
+.terminal-line { margin: 27px 0 20px; padding: 13px 15px; overflow-x: auto; color: var(--muted); background: var(--code); border: 1px solid var(--border); border-radius: 7px; font-family: var(--font-mono); font-size: .78rem; white-space: nowrap; }
+.terminal-line span { color: var(--green); }
+.terminal-line b { color: var(--accent); animation: blink 1s steps(1) infinite; }
+.social { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 10px; }
+.social a, .download { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; color: var(--text); background: var(--surface-soft); border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-mono); font-size: .76rem; transition: .2s ease; }
+.social a:hover, .download:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } 30% { transform: rotate(12deg); } 40% { transform: rotate(-4deg); } }
+@keyframes blink { 50% { opacity: 0; } }
 @keyframes reveal-up { from { opacity: 0; transform: translateY(28px); } }
 @keyframes reveal-scale { from { opacity: 0; transform: scale(.92); } }
 
-/* .download a:hover {
-  color: #6871d2;
-} */
-
 @media (max-width: 768px) {
-  .home { padding-top: 7rem; text-align: center; }
+  .home { min-height: auto; margin-top: 0; padding-top: 6rem; padding-bottom: 1rem; text-align: left; }
   .text {
     padding: 1.5rem 0 0;
   }
@@ -176,6 +135,21 @@ export default {
   .download {
     padding: 10px 20px;
   }
-  .hero-visual { max-width: 360px; }
+  .hero-visual { max-width: 210px; }
+  .profile-meta { max-width: 100%; text-align: center; margin-bottom: 34px; }
+  .readme-bar { padding-inline: 12px; }
+  .text { padding: 24px 18px; }
+  .text p { line-height: 1.7; }
+  .terminal-line { margin-top: 22px; font-size: .7rem; }
+  .social { gap: 7px; }
+  .social a, .download { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (max-width: 380px) {
+  .home { padding-top: 5.5rem; }
+  .hero-visual { max-width: 175px; }
+  .text h1 { font-size: 1.75rem; }
+  .text h6 { font-size: .78rem; line-height: 1.6; }
+  .terminal-line { margin-inline: -6px; }
 }
 </style>

@@ -4,28 +4,37 @@
 
 :root {
   color-scheme: light;
-  --background: #f7f7fb;
+  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+  --section-space: clamp(72px, 9vw, 112px);
+  --page-gutter: clamp(16px, 4vw, 40px);
+  --background: #f6f8fa;
   --surface: #ffffff;
-  --surface-soft: #f0f0f8;
-  --text: #20202a;
-  --muted: #666677;
-  --primary: #6871d2;
-  --primary-soft: #aab0ee;
-  --border: rgba(32, 32, 42, .11);
-  --shadow: 0 20px 55px rgba(54, 57, 110, .13);
+  --surface-soft: #f6f8fa;
+  --code: #f6f8fa;
+  --text: #1f2328;
+  --muted: #656d76;
+  --primary: #0969da;
+  --primary-soft: #54aeff;
+  --accent: #0969da;
+  --green: #1a7f37;
+  --border: #d0d7de;
+  --shadow: 0 8px 24px rgba(140, 149, 159, .18);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --background: #101116;
-  --surface: #191a22;
-  --surface-soft: #222430;
-  --text: #f3f3f7;
-  --muted: #adafbd;
-  --primary: #949bf0;
-  --primary-soft: #555da9;
-  --border: rgba(255, 255, 255, .1);
-  --shadow: 0 22px 60px rgba(0, 0, 0, .35);
+  --background: #0d1117;
+  --surface: #0d1117;
+  --surface-soft: #161b22;
+  --code: #010409;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --primary: #58a6ff;
+  --primary-soft: #1f6feb;
+  --accent: #58a6ff;
+  --green: #3fb950;
+  --border: #30363d;
+  --shadow: 0 12px 32px rgba(0, 0, 0, .28);
 }
 
 * {
@@ -36,7 +45,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 78px;
 }
 
 body {
@@ -44,6 +53,10 @@ body {
   color: var(--text);
   background: var(--background);
   transition: color .35s ease, background-color .35s ease;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
 }
 
 a {
@@ -63,28 +76,31 @@ button, a {
 
 .site-shell {
   min-height: 100vh;
+  background: color-mix(in srgb, var(--background) 94%, transparent) !important;
   transition: color .35s ease, background-color .35s ease;
 }
 
 .section {
-  width: min(1180px, calc(100% - 40px));
-  margin-inline: auto;
-  padding-block: clamp(64px, 9vw, 110px);
+  width: min(1180px, calc(100% - var(--page-gutter) - var(--page-gutter)));
+  margin: var(--section-space) auto;
+  padding-block: 0;
+  scroll-margin-top: 78px;
 }
 
 .v-card {
   color: var(--text) !important;
   background: var(--surface) !important;
   border: 1px solid var(--border) !important;
-  border-radius: 20px !important;
+  border-radius: 8px !important;
   box-shadow: var(--shadow) !important;
   overflow: hidden;
   transition: transform .3s ease, box-shadow .3s ease !important;
 }
 
 .v-card:hover {
-  transform: translateY(-10px) scale(1.015);
-  box-shadow: 0 28px 65px rgba(54, 57, 110, .22) !important;
+  transform: translateY(-5px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 12%, transparent) !important;
 }
 
 .v-card .v-img {
@@ -104,7 +120,18 @@ button, a {
 
 .text-skills h1 {
   color: var(--text);
-  letter-spacing: .05em;
+  font-family: var(--font-mono);
+  font-size: clamp(1.35rem, 3vw, 2rem) !important;
+  letter-spacing: -.03em;
+}
+
+.site-shell main .text-skills {
+  text-align: left !important;
+}
+
+.text-skills h1::before {
+  content: "# ";
+  color: var(--muted);
 }
 
 .text-skills p {
@@ -167,13 +194,13 @@ button, a {
   margin-bottom: 24px;
   padding: 20px 10px;
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 8px;
   background: var(--surface);
   transition: transform .3s ease, border-color .3s ease;
 }
 
 .experience > .v-row > .v-col > .v-row:hover {
-  transform: translateY(-4px);
+  transform: translateX(5px);
   border-color: var(--primary);
 }
 
@@ -187,9 +214,14 @@ button, a {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-space: 56px;
+  }
   .section {
-    width: min(100% - 28px, 620px);
-    padding-block: 60px;
+    width: min(620px, calc(100% - var(--page-gutter) - var(--page-gutter)));
+    margin-block: var(--section-space);
+    padding-block: 0;
+    scroll-margin-top: 72px;
   }
   .v-card { max-width: 100% !important; }
 }
