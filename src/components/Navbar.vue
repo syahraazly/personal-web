@@ -1,8 +1,8 @@
 <template>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Syahraazly home" @click="closeMenu">
-      <img src="/syahraazly.png" alt="" />
-      <span>syahraazly</span>
+    <a class="brand" href="#home" aria-label="Syahraazly home" @click.prevent="navigate('#home')">
+      <v-icon class="github-mark">mdi-github</v-icon>
+      <span>syahraazly</span><b>/</b><span class="repo-name">portfolio</span>
     </a>
 
     <div class="header-actions">
@@ -27,7 +27,7 @@
     </div>
 
     <nav :class="{ active: isMenuActive }">
-      <a v-for="item in menuItems" :key="item.href" :href="item.href" @click="closeMenu">
+      <a v-for="item in menuItems" :key="item.href" :href="item.href" @click.prevent="navigate(item.href)">
         {{ item.label }}
       </a>
     </nav>
@@ -45,9 +45,9 @@ export default {
     return {
       isMenuActive: false,
       menuItems: [
-        { label: "Home", href: "#home" },
-        { label: "Experience", href: "#experience" },
-        { label: "Portfolio", href: "#project" },
+        { label: "README", href: "#home" },
+        { label: "Commits", href: "#experience" },
+        { label: "Repositories", href: "#project" },
         { label: "Contact", href: "#contact" },
       ],
     };
@@ -58,6 +58,14 @@ export default {
     },
     closeMenu() {
       this.isMenuActive = false;
+    },
+    navigate(href) {
+      this.closeMenu();
+      const section = document.querySelector(href);
+      if (!section) return;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      window.history.replaceState(null, "", href);
     },
   },
 };
@@ -70,18 +78,21 @@ export default {
   z-index: 1000;
   display: flex;
   align-items: center;
-  min-height: 74px;
-  padding: 10px clamp(20px, 5vw, 76px);
+  min-height: 64px;
+  padding: 8px var(--page-gutter);
   color: var(--text);
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(18px);
 }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-size: 1.15rem; font-weight: 800; }
-.brand img { width: 46px; height: 46px; object-fit: cover; object-position: top; border-radius: 50%; border: 2px solid var(--primary); background: white; }
+.brand { display: inline-flex; align-items: center; gap: 7px; color: var(--text); font-size: .95rem; font-weight: 600; }
+.brand b { color: var(--muted); font-weight: 400; }
+.repo-name { font-family: var(--font-mono); }
+.github-mark { font-size: 30px; transition: transform .25s ease; }
+.brand:hover .github-mark { transform: rotate(-8deg) scale(1.08); }
 nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 40px); margin-left: auto; }
-nav a { position: relative; color: var(--muted); font-size: .95rem; font-weight: 600; }
-nav a::after { content: ""; position: absolute; left: 0; bottom: -7px; width: 100%; height: 2px; background: var(--primary); transform: scaleX(0); transition: transform .25s ease; }
+nav a { position: relative; color: var(--muted); font-family: var(--font-mono); font-size: .78rem; font-weight: 600; }
+nav a::after { content: ""; position: absolute; left: 0; bottom: -13px; width: 100%; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform .25s ease; }
 nav a:hover { color: var(--primary); }
 nav a:hover::after { transform: scaleX(1); }
 .header-actions { display: flex; align-items: center; gap: 8px; margin-left: 24px; order: 2; }
@@ -94,7 +105,8 @@ nav a:hover::after { transform: scaleX(1); }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 @media (max-width: 760px) {
   .site-header { min-height: 66px; padding: 8px 18px; }
-  .brand img { width: 40px; height: 40px; }
+  .repo-name { display: none; }
+  .brand b { display: none; }
   .header-actions { margin-left: auto; }
   .menu-toggle { display: grid; }
   nav { position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; display: grid; gap: 4px; padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(-12px); transition: .25s ease; }
@@ -102,5 +114,13 @@ nav a:hover::after { transform: scaleX(1); }
   nav a { padding: 12px 14px; border-radius: 10px; }
   nav a:hover { background: var(--surface-soft); }
   nav a::after { display: none; }
+}
+
+@media (max-width: 380px) {
+  .site-header { padding-inline: var(--page-gutter); }
+  .brand { font-size: .85rem; }
+  .github-mark { font-size: 26px; }
+  .header-actions { gap: 5px; }
+  .theme-toggle, .menu-toggle { width: 38px; height: 38px; }
 }
 </style>

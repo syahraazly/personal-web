@@ -1,267 +1,109 @@
 <template>
-    <section id="project" class="section">
-        <div class="portfolio">
-            <div class="text-skills">
-                <h1>PORTFOLIO</h1>
-                <p style="color: #6871d2">The <span style="color: #272727">Projects</span></p> <br>
-            </div>
-            <v-row>
-                <v-col cols="12" md="4">
-                    <v-card class="mx-auto" max-width="344">
-                        <v-img src="Wikusama Hotels (1).png" height="200px" cover=""></v-img>
-                        <v-card-title>
-                            <h4 style="color: #6871d2">Wikusama Hotels</h4>
-                        </v-card-title>
-                        <v-card-text>The appearance of the Hotel Booking website uses the Laravel framework and
-                            Vue.js.
-                            <div class="card-text-custom">
-                                <a href="https://github.com/syahraazly/hotel-vue">
-                                    <span>View Code</span>
-                                    <!-- <img src="panah.png" alt=""> -->
-                                </a>
-                            </div>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-card class="mx-auto" max-width="344">
-                        <v-img src="Haji (1).png" height="200px" cover=""></v-img>
-                        <v-card-title>
-                            <h4 style="color: #6871d2">Landing Page Haji</h4>
-                        </v-card-title>
-                        <v-card-text>PERSADA website landing page displays using HTML/CSS and Javascript.
-                            <div class="card-text-custom">
-                                <a href="https://github.com/syahraazly/LP-Haji">
-                                    <span>View Code</span>
-                                    <!-- <img src="panah.png" alt=""> -->
-                                </a>
-                            </div>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-card class="mx-auto" max-width="344">
-                        <v-img src="Start (1).png" height="200px" cover=""></v-img>
-                        <v-card-title>
-                            <h4 style="color: #6871d2">Recreate Start</h4>
-                        </v-card-title>
-                        <v-card-text>Recreate the START by @Joyshihab Landing Page design using HTML/CSS.
-                            <div class="card-text-custom">
-                                <a href="https://github.com/syahraazly/LP-START">
-                                    <span>View Code</span>
-                                    <!-- <img src="panah.png" alt=""> -->
-                                </a>
-                            </div>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-            <div class="github">
-                <a href="https://github.com/syahraazly" target="_blank">
-                    <v-btn rounded prepend-icon="mdi-github" variant="outlined">
-                        SEE MORE
-                    </v-btn>
-                </a>
-            </div>
-        </div>
-        <div class="skills">
-            <div class="text-skills">
-                <h1>PROFESSIONAL SKILLS</h1>
-                <p style="color: #6871d2">The <span style="color: #272727">Talents</span></p> <br>
-            </div>
-            <v-row class="skills">
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        HTML/CSS
-                    </v-btn>
-                </v-col><v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Javascript
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Swift
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        SwiftUI
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        PHP
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Go
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        MYSQL
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Laravel
-                    </v-btn>
-                </v-col><v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        VueJS
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        NextJS
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Tailwind CSS
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Quasar
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Bootstrap
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Vuetify
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Sass
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Git
-                    </v-btn>
-                </v-col><v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Postman
-                    </v-btn>
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-btn variant="outlined">
-                        Office 365
-                    </v-btn>
-                </v-col>
-            </v-row>
-        </div>
-    </section>
-</template>
-<script>
+  <section id="project" class="section">
+    <div class="portfolio">
+      <div class="text-skills">
+        <h1>PORTFOLIO</h1>
+        <p>Repositories and selected work.</p>
+      </div>
 
-export default {
-    name: 'AppProject'
-}
+      <div class="repo-shell">
+        <div class="repo-toolbar">
+          <span><v-icon size="16">mdi-source-branch</v-icon> main</span>
+          <a href="https://github.com/syahraazly" target="_blank">
+            <v-icon size="16">mdi-github</v-icon> View GitHub
+          </a>
+        </div>
+        <div class="repo-empty">
+          <v-icon size="30">mdi-archive-outline</v-icon>
+          <h2>Work in progress</h2>
+          <p>Project notes and case studies are being revised. I’ll publish them here when they are ready to read.</p>
+          <span>Last updated: while cleaning up the docs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="text-skills">
+        <h1>PROFESSIONAL SKILLS</h1>
+        <p>Tools I have used in real projects and ongoing practice.</p>
+      </div>
+
+      <div class="skill-file">
+        <div class="file-bar">
+          <span><v-icon size="16">mdi-file-document-outline</v-icon> stack.md</span>
+          <span>18 tools</span>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML / CSS</li><li>JavaScript</li><li>Vue.js</li><li>Next.js</li>
+              <li>Tailwind CSS</li><li>Quasar</li><li>Vuetify</li><li>Bootstrap</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend & data</h3>
+            <ul><li>PHP</li><li>Go</li><li>Laravel</li><li>MySQL</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Apple platforms</h3>
+            <ul><li>Swift</li><li>SwiftUI</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Workflow</h3>
+            <ul><li>Git</li><li>Postman</li><li>Sass</li><li>Office 365</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default { name: "AppProject" };
 </script>
 
-<style>
-.portfolio {
-    padding-bottom: 6rem;
+<style scoped>
+.portfolio { padding-bottom: clamp(70px, 10vw, 120px); }
+.text-skills { margin-bottom: 28px; }
+.repo-shell, .skill-file { overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.repo-toolbar, .file-bar {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 11px 14px; color: var(--muted); background: var(--surface-soft);
+  border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: .76rem;
+}
+.repo-toolbar span, .repo-toolbar a, .file-bar span { display: flex; align-items: center; gap: 7px; }
+.repo-toolbar a { color: var(--text); }
+.repo-toolbar a:hover { color: var(--accent); }
+.repo-empty { padding: clamp(44px, 8vw, 84px) 24px; text-align: center; }
+.repo-empty > .v-icon { margin-bottom: 15px; color: var(--muted); }
+.repo-empty h2 { margin-bottom: 9px; font-size: clamp(1.3rem, 3vw, 1.75rem); letter-spacing: -.025em; }
+.repo-empty p { max-width: 570px; margin: 0 auto 18px; color: var(--muted); font-size: .98rem; line-height: 1.7; }
+.repo-empty span { color: var(--muted); font-family: var(--font-mono); font-size: .7rem; }
+.skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); }
+.skill-group { min-height: 190px; padding: clamp(24px, 4vw, 38px); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.skill-group:nth-child(2n) { border-right: 0; }
+.skill-group:nth-last-child(-n+2) { border-bottom: 0; }
+.skill-group h3 { margin-bottom: 18px; color: var(--text); font-family: var(--font-mono); font-size: .88rem; }
+.skill-group h3::before { content: "## "; color: var(--muted); }
+.skill-group ul { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 0; list-style: none; }
+.skill-group li { position: relative; padding-left: 13px; color: var(--muted); font-size: .9rem; line-height: 1.6; transition: color .18s ease; }
+.skill-group li::before { content: ""; position: absolute; top: .65em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+.skill-group li:hover { color: var(--text); }
+@media (max-width: 700px) {
+  .skill-groups { grid-template-columns: 1fr; }
+  .skill-group, .skill-group:nth-child(2n), .skill-group:nth-last-child(-n+2) { min-height: 0; border-right: 0; border-bottom: 1px solid var(--border); }
+  .skill-group:last-child { border-bottom: 0; }
+  .file-bar span:last-child { display: none; }
+  .repo-toolbar { align-items: flex-start; }
+  .repo-toolbar a { flex: 0 0 auto; }
+  .repo-empty { padding-inline: 18px; }
+  .skill-group { padding: 24px 20px; }
 }
 
-.skills {
-    padding-bottom: 6rem;
-}
-
-.text-skills {
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.text-skills h1 {
-    font-size: 2rem;
-}
-
-.skills .v-btn {
-    min-width: 100px;
-    height: 50px;
-    color: var(--text);
-    background: var(--surface);
-    border-color: var(--border);
-    margin: 5px;
-    box-shadow: 0 5px 15px transparent;
-    transition: color .3s ease, background .3s ease, border-color .3s ease,
-        box-shadow .3s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
-}
-
-.skills .v-btn:hover {
-    color: #ffffff;
-    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
-    border-color: var(--primary);
-    box-shadow: 0 12px 26px color-mix(in srgb, var(--primary) 35%, transparent);
-    transform: translateY(-5px) scale(1.04);
-}
-
-.github {
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.github a {
-    text-decoration: none;
-}
-
-.github .v-btn:hover {
-    color: #ffffff;
-    background: var(--primary);
-    border-color: var(--primary);
-    box-shadow: 0 12px 28px color-mix(in srgb, var(--primary) 30%, transparent);
-    transform: translateY(-4px);
-}
-
-.card-text-custom {
-    margin-top: 2rem;
-}
-
-.card-text-custom span {
-    font-size: 15px;
-}
-
-.card-text-custom a {
-    color: #6871d2;
-    display: flex;
-    text-decoration: none;
-}
-
-.card-text-custom img {
-    width: 10px;
-    height: 10px;
-    display: flex;
-}
-
-.github a:hover {
-    color: var(--primary);
-}
-
-.v-img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .text-skills h1 {
-        font-size: 1.5rem;
-    }
-
-    .skills .v-btn,
-    .techstacks .v-btn {
-        min-width: 80px;
-        font-size: x-small;
-    }
+@media (max-width: 390px) {
+  .repo-toolbar { font-size: .68rem; }
+  .repo-toolbar a { gap: 4px; }
+  .skill-group ul { gap: 8px 13px; }
 }
 </style>
